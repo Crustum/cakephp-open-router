@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+
+namespace Crustum\OpenRouter\Types;
+
+/**
+ * This class keeps tool choice types.
+ * Validation for the tool choice parameter is added in ChatData DTO class since it can only get:
+ * none, auto or ToolCallData (in OpenAI it is set as 'required', it means the model must call one or more tools.)
+ */
+final readonly class ToolChoiceType
+{
+    /**
+     * auto means the model can pick between generating a message or calling one or more tools.
+     */
+    public const string AUTO = 'auto';
+
+    /**
+     * none means the model will not call any tool and instead generates a message
+     */
+    public const string NONE = 'none';
+}
